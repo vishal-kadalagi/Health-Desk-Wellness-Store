@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/500.css';
+@import '@fontsource/playfair-display/600.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 40% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 12%;
+
+    --primary: 175 65% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 175 50% 95%;
+
+    --secondary: 145 30% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 175 20% 96%;
+    --muted-foreground: 210 20% 45%;
+
+    --accent: 38 85% 55%;
+    --accent-foreground: 210 40% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 175 20% 90%;
+    --input: 175 20% 90%;
+    --ring: 175 65% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --teal-dark: 175 70% 25%;
+    --teal-medium: 175 65% 35%;
+    --teal-light: 175 50% 45%;
+    --sage: 145 30% 45%;
+    --sage-light: 145 25% 90%;
+    --gold: 38 85% 55%;
+    --gold-light: 38 70% 90%;
+    --cream: 40 30% 97%;
+    --navy: 210 40% 12%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(175 50% 95%) 0%, hsl(145 25% 92%) 50%, hsl(40 30% 97%) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(175 70% 25%) 0%, hsl(175 65% 35%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(175 20% 98%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 85% 55%) 0%, hsl(38 90% 65%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(175 65% 35% / 0.1);
+    --shadow-md: 0 8px 24px -8px hsl(175 65% 35% / 0.15);
+    --shadow-lg: 0 16px 48px -16px hsl(175 65% 35% / 0.2);
+    --shadow-glow: 0 0 40px hsl(175 65% 35% / 0.15);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 40% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 210 35% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 210 35% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 175 55% 45%;
+    --primary-foreground: 210 40% 8%;
+
+    --secondary: 145 25% 35%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 210 30% 18%;
+    --muted-foreground: 210 15% 65%;
+
+    --accent: 38 75% 50%;
+    --accent-foreground: 210 40% 8%;
+
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 210 30% 20%;
+    --input: 210 30% 20%;
+    --ring: 175 55% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-teal {
+    background: var(--gradient-teal);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background-size: 200% 100%;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Stagger children animation */
+.stagger-children > * {
+  opacity: 0;
+  animation: fade-up 0.5s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.7s; }
