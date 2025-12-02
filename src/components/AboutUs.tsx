@@ -111,7 +111,7 @@ const AboutUs = () => {
             </div>
 
             <Button variant="hero" size="lg" className="group" asChild>
-              <Link to="/shop">
+              <Link to="/about">
                 Learn More
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
